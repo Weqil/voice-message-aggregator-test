@@ -1,0 +1,16 @@
+.mails-table {
+  .mails-table__header {
+    background: var(--mails-table-background);
+    border-radius: var(--border-radius-standard);
+    display: grid;
+    grid-template-columns: 0.8fr 1fr 2fr 0.5fr;
+    padding: var(--padding-standard);
+    p {
+      font-size: var(--font-xs-size);
+      font-weight: var(--font-weight-bold);
+      color: var(--font-dark-color);
+      text-transform: uppercase;
+      font-family: var(--font-standard-family);
+    }
+  }
+}

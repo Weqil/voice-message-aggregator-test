@@ -2,7 +2,10 @@
   --violet-color: #6366f1;
   --white-color: rgba(255, 255, 255, 1);
   --gray-color: #1f2937;
+  --gray-color-dark: #374151;
   --gray-color-light: #9ca3af;
+  --gray-blue-color: #f1f5f9;
+  --gray-blue-color-light: #f8fafc;
 }
 
 :root {

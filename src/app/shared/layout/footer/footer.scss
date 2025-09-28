@@ -10,3 +10,10 @@ footer {
   font-weight: var(--font-weight-regular);
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  footer {
+    padding-left: var(--padding-standard);
+    padding-right: var(--padding-standard);
+  }
+}

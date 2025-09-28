@@ -19,5 +19,6 @@
 
 :root {
   --font-light-color: var(--white-color);
+  --font-dark-color: var(--gray-color-dark);
   --font-gray-color: var(--gray-color-light);
 }

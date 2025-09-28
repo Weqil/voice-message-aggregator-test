@@ -2,4 +2,7 @@
   --header-background: var(--violet-gradient);
   --header-background-color: var(--violet-color);
   --footer-background: var(--gray-color);
+  --main-background: var(--gray-blue-color);
+  --mails-container-background: var(--white-color);
+  --mails-table-background: var(--gray-blue-color-light);
 }

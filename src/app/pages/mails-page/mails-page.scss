@@ -1,0 +1,12 @@
+main {
+  background: var(--main-background);
+  height: 100%;
+}
+.mails-container {
+  padding: var(--padding-standard);
+  .mails-container__content {
+    background: var(--mails-container-background);
+    border-radius: var(--border-radius-standard);
+    padding: var(--padding-standard);
+  }
+}
