@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.standard-title {
+  font-family: var(--font-standard-family);
+  font-size: var(--font-md-size);
+  font-weight: var(--font-weight-bold);
+  color: var(--font-light-color);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+

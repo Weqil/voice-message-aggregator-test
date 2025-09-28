@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="container">
+    <nav class="header__content">
+      <div class="header__content__tittle-container">
+        <img src="/assets/icons/circle.svg" alt="" />
+        <p class="standard-title">Голосовая почта</p>
+      </div>
+      @if (user) {
+      <div class="header__content__user-container">
+        <p>Пользователь</p>
+        <p>{{ user.email }}</p>
+      </div>
+      }
+    </nav>
+  </div>
+</header>

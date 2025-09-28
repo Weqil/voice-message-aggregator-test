@@ -1,0 +1,10 @@
+:root {
+  --violet-color: #6366f1;
+  --white-color: rgba(255, 255, 255, 1);
+  --gray-color: #1f2937;
+  --gray-color-light: #9ca3af;
+}
+
+:root {
+  --violet-gradient: linear-gradient(180deg, rgba(99, 102, 241, 1) 0%, rgba(139, 92, 246, 1) 100%);
+}

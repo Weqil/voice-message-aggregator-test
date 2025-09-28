@@ -1,0 +1,5 @@
+:root {
+  --header-background: var(--violet-gradient);
+  --header-background-color: var(--violet-color);
+  --footer-background: var(--gray-color);
+}

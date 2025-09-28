@@ -1,0 +1,12 @@
+footer {
+  background: var(--footer-background);
+  position: absolute;
+  bottom: 0;
+  padding-top: var(--padding-standard);
+  padding-bottom: var(--padding-standard);
+  color: var(--font-gray-color);
+  font-size: var(--font-sm-size);
+  font-family: var(--font-standard-family);
+  font-weight: var(--font-weight-regular);
+  width: 100%;
+}
