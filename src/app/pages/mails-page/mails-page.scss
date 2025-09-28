@@ -14,3 +14,12 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .mails-container {
+    padding: 0;
+    .mails-container__content {
+      background: none;
+    }
+  }
+}

@@ -40,3 +40,12 @@ p {
   .mail-section__action {
   }
 }
+@media (max-width: 768px) {
+  .mail-section {
+    display: flex;
+    background: var(--mails-section-background);
+    flex-direction: column;
+
+    gap: var(--gap-standard);
+  }
+}

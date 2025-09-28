@@ -34,3 +34,17 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .mails-table {
+    .mails-table__header {
+      display: none;
+    }
+    .mails-table__body {
+      padding: 0;
+    }
+  }
+  .mail-section {
+    background: var(--mails-section-background);
+  }
+}
