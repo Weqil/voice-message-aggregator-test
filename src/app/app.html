@@ -1,17 +1,3 @@
-<!-- @if (1 !== currentPage) {
-<button (click)="setPage(1)">...1</button>
-}
-<button (click)="backPage()"><</button>
-@for (item of voiceMail?.alsoPages; track $index) { @if (item == voiceMail?.currentPage) {
-<button style="background-color: blue">{{ item }}</button>
-}@else {
-<button (click)="setPage(item)">{{ item }}</button>
-} } @if (maxPage && maxPage!== currentPage) {
-<button (click)="setPage(maxPage)">...{{ maxPage }}</button>
-
-} -->
-
-<!-- <button (click)="nextPage()">></button> -->
 <app-header [user]="tempUser"></app-header>
 <router-outlet />
 <app-footer footerText="© 2024 VoiceMail System"></app-footer>

@@ -5,4 +5,11 @@
     <p>запись сообщения</p>
     <p>действия</p>
   </div>
+  <div class="mails-table__body">
+    @for (mail of mails; track $index) {
+    <app-mails-table-item [mail]="mail">
+      <button class="download-button"><img src="assets/icons/download.svg" alt="" /></button>
+    </app-mails-table-item>
+    }
+  </div>
 </div>

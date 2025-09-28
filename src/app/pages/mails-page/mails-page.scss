@@ -1,6 +1,6 @@
-main {
+.mails-page {
   background: var(--main-background);
-  height: 100%;
+  padding-bottom: 8rem;
 }
 .mails-container {
   padding: var(--padding-standard);
@@ -8,5 +8,9 @@ main {
     background: var(--mails-container-background);
     border-radius: var(--border-radius-standard);
     padding: var(--padding-standard);
+    .paginations-wrapper {
+      display: flex;
+      justify-content: center;
+    }
   }
 }

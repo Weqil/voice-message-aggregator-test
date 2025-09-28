@@ -8,9 +8,29 @@
     p {
       font-size: var(--font-xs-size);
       font-weight: var(--font-weight-bold);
+      text-align: center;
       color: var(--font-dark-color);
       text-transform: uppercase;
       font-family: var(--font-standard-family);
+    }
+  }
+  .mails-table__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-standard);
+    padding: var(--padding-standard);
+  }
+  .download-button {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background: var(--gray-blue-color-medium-light);
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
 }
