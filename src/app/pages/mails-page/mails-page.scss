@@ -1,6 +1,6 @@
 .mails-page {
   background: var(--main-background);
-  padding-bottom: 8rem;
+  padding-bottom: 10rem;
 }
 .mails-container {
   padding: var(--padding-standard);
@@ -8,8 +8,17 @@
     background: var(--mails-container-background);
     border-radius: var(--border-radius-standard);
     padding: var(--padding-standard);
+
     .paginations-wrapper {
       display: flex;
+      position: fixed;
+      width: 100%;
+      left: 0;
+      bottom: 5rem;
+      padding: var(--padding-standard);
+      z-index: 100;
+      z-index: 100;
+      background: var(--main-background);
       justify-content: center;
     }
   }
@@ -20,6 +29,15 @@
     padding: 0;
     .mails-container__content {
       background: none;
+      .paginations-wrapper {
+        background: var(--main-background);
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 5rem;
+        padding: var(--padding-standard);
+        z-index: 100;
+      }
     }
   }
 }

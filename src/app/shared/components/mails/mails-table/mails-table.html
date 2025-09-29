@@ -8,7 +8,11 @@
   <div class="mails-table__body">
     @for (mail of mails; track $index) {
     <app-mails-table-item [mail]="mail">
-      <button class="download-button"><img src="assets/icons/download.svg" alt="" /></button>
+      @if(mail?.MIME) {
+      <button class="download-button" (click)="downloadAudio(mail.MIME)">
+        <img src="assets/icons/download.svg" alt="" />
+      </button>
+      }
     </app-mails-table-item>
     }
   </div>

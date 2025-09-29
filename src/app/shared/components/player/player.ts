@@ -1,4 +1,3 @@
-// player.ts
 import { Component, Input, ElementRef, ViewChild } from '@angular/core';
 import { IMIME } from '../../models/mime';
 import { environment } from '../../../../environments/environment.development';
@@ -47,7 +46,6 @@ export class Player {
   }
 
   public onError() {
-    console.error('Ошибка загрузки аудио');
     this.isLoading = false;
   }
 

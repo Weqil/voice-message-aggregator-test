@@ -23,6 +23,7 @@
   .download-button {
     cursor: pointer;
     width: 30px;
+    transition: 0.1s all;
     height: 30px;
     background: var(--gray-blue-color-medium-light);
     border: none;
@@ -31,6 +32,13 @@
     img {
       width: 100%;
       height: 100%;
+    }
+    &:hover {
+      background: var(--violet-color);
+      transition: 0.1s all;
+      img {
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(16%) hue-rotate(331deg);
+      }
     }
   }
 }

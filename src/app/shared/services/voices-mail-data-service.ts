@@ -5,7 +5,7 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IVoiceMailFilters } from '../models/filters/voice-mail-filters';
 import { IRecord } from '../models/record';
-
+import { of } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -23,6 +23,9 @@ export class VoicesMailDataService {
     return records.slice(start, end);
   }
 
+  private $loadRecords: BehaviorSubject<IVoiceMailResponse> =
+    new BehaviorSubject<IVoiceMailResponse>({} as IVoiceMailResponse);
+
   generateAlsoPages(maxPage: number): number[] {
     let startPage = this.$eventFilter.value.page;
     let endPage = this.$eventFilter.value.page + this.$eventFilter.value.alsoPagesStep;
@@ -38,19 +41,35 @@ export class VoicesMailDataService {
     return pages;
   }
 
-  public getVoiceMails(): Observable<IVoiceMailResponse> {
+  loadVoiceMails() {
     return this.http.get<IVoiceMailResponse>(environment.voicesMailJsonUrl).pipe(
       map((res: IVoiceMailResponse) => {
-        let maxPage = Math.ceil(res.records.length / this.$eventFilter.value.limit);
-        return {
-          metadata: res.metadata,
-          records: this.paginateRecords(res.records),
-          nextPage: this.$eventFilter.value.page + 1,
-          previousPage: this.$eventFilter.value.page - 1,
-          alsoPages: this.generateAlsoPages(maxPage),
-          currentPage: this.$eventFilter.value.page,
-          maxPage: maxPage,
-        };
+        this.$loadRecords.next(res);
+        return this.$loadRecords.value;
+      })
+    );
+  }
+
+  slicesRecords(res: IVoiceMailResponse) {
+    let maxPage = Math.ceil(res.records.length / this.$eventFilter.value.limit);
+    return {
+      metadata: res.metadata,
+      records: this.paginateRecords(res.records),
+      nextPage: this.$eventFilter.value.page + 1,
+      previousPage: this.$eventFilter.value.page - 1,
+      alsoPages: this.generateAlsoPages(maxPage),
+      currentPage: this.$eventFilter.value.page,
+      maxPage: maxPage,
+    };
+  }
+
+  public getVoiceMails(): Observable<IVoiceMailResponse> {
+    if (this.$loadRecords?.value?.records?.length > 0) {
+      return of(this.slicesRecords(this.$loadRecords.value));
+    }
+    return this.loadVoiceMails().pipe(
+      map((res: IVoiceMailResponse) => {
+        return this.slicesRecords(res);
       })
     );
   }

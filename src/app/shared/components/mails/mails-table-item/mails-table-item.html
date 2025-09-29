@@ -1,17 +1,21 @@
 <div class="mail-section">
   @if(mail?.Received) {
   <div class="mail-section__date mail-section-align-center">
-    <p class="mail-section__date-text">{{ mail?.Received | date : 'dd.MM HH:mm ' }}</p>
-    <p class="mail-section__date-text-translit">{{ mail?.Received | translitDate }}</p>
+    <div>
+      <p class="mail-section__date-text">{{ mail?.Received | date : 'dd.MM HH:mm ' }}</p>
+      <p class="mail-section__date-text-translit">{{ mail?.Received | translitDate }}</p>
+    </div>
   </div>
   }
   <div class="mail-section__phone mail-section-align-center">
     <p>{{ mail?.phoneNumber }}</p>
   </div>
-  <div class="mail-section__audio mail-section-align-center">
-    <app-player [audioUrl]="mail?.MIME"></app-player>
-  </div>
-  <div class="mail-section__action mail-section-align-center">
-    <ng-content></ng-content>
+  <div class="player-wrapper">
+    <div class="mail-section__audio mail-section-align-center">
+      <app-player [audioUrl]="mail?.MIME"></app-player>
+    </div>
+    <div class="mail-section__action mail-section-align-center">
+      <ng-content></ng-content>
+    </div>
   </div>
 </div>

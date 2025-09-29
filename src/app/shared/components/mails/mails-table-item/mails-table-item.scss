@@ -32,6 +32,9 @@ p {
     font-weight: var(--font-weight-regular);
     font-family: var(--font-standard-family);
   }
+  .player-wrapper {
+    display: contents;
+  }
   p {
     font-size: var(--font-xs-size);
     font-weight: var(--font-weight-bold);
@@ -54,5 +57,11 @@ p {
   .mail-section-align-center {
     align-items: flex-start;
     justify-content: center;
+  }
+  .player-wrapper {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 }

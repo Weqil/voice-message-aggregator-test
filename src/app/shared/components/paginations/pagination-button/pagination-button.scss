@@ -9,9 +9,11 @@ button {
   transition: 0.1s all;
   font-size: var(--font-ms-size);
 }
-button:hover {
+
+button:active {
   background: var(--gray-color-light);
   color: var(--white-color);
+  outline: none;
   transition: 0.1s all;
 }
 

@@ -5,6 +5,7 @@ import { IVoiceMailResponse } from '../../shared/models/responses/voice-mail';
 import { IUser } from '../../shared/models/user';
 import { VoicesMailDataService } from '../../shared/services/voices-mail-data-service';
 import { IRecord } from '../../shared/models/record';
+import { Subject, switchMap, takeUntil } from 'rxjs';
 @Component({
   selector: 'app-mails-page',
   imports: [MailsTable, Paginations],
@@ -14,6 +15,7 @@ import { IRecord } from '../../shared/models/record';
 export class MailsPage {
   public voicesMailDataService: VoicesMailDataService = inject(VoicesMailDataService);
   public voiceMailResponse: IVoiceMailResponse | null = null;
+  private destroy$ = new Subject<void>();
   public maxPage: number | null = null;
   public records: IRecord[] = [];
   public currentPage: number | null = 1;
@@ -38,15 +40,22 @@ export class MailsPage {
       page: page,
     });
   }
+
   ngOnInit() {
-    this.voicesMailDataService.$eventFilter.subscribe((filter) => {
-      this.voicesMailDataService.getVoiceMails().subscribe((res: IVoiceMailResponse) => {
+    this.voicesMailDataService.$eventFilter
+      .pipe(
+        takeUntil(this.destroy$),
+        switchMap(() => this.voicesMailDataService.getVoiceMails())
+      )
+      .subscribe((res: IVoiceMailResponse) => {
         this.voiceMailResponse = res;
-        console.log(res);
         this.records = res.records;
         this.maxPage = res.maxPage;
         this.currentPage = res.currentPage;
       });
-    });
+  }
+  ngOnDestroy() {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

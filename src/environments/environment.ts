@@ -1,3 +1,4 @@
 export const environment = {
-  voicesMailJsonUrl: './voicemail_data.json',
+  voicesMailJsonUrl: './data/voicemail_data.json',
+  audioUrl: './assets/audio',
 };

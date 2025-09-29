@@ -1,4 +1,3 @@
-
 html,
 body {
   height: 100%;
@@ -22,4 +21,3 @@ app-root {
   max-width: var(--container-width);
   margin: 0 auto;
 }
-

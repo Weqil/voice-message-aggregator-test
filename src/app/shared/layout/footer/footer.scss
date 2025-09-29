@@ -6,15 +6,10 @@ footer {
   color: var(--font-gray-color);
   z-index: 10;
   width: 100%;
+  padding-left: var(--padding-standard);
+  padding-right: var(--padding-standard);
   position: fixed;
   font-size: var(--font-sm-size);
   font-family: var(--font-standard-family);
   font-weight: var(--font-weight-regular);
-}
-
-@media (max-width: 768px) {
-  footer {
-    padding-left: var(--padding-standard);
-    padding-right: var(--padding-standard);
-  }
 }
