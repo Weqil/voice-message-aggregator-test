@@ -1,7 +1,0 @@
-@if (page && !alsoButton) {
-<button (click)="onClick.emit()" [class.current]="page === currentPage">{{ page }}</button>
-} @if (alsoButton) {
-<button (click)="onClick.emit()" class="also-button">
-  <img src="{{ alsoButton.icon }}" alt="" />
-</button>
-}

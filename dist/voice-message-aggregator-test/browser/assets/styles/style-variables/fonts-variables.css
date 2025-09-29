@@ -1,0 +1,25 @@
+:root {
+  --font-md-size: 24px;
+  --font-sm-size: 14px;
+  --font-xs-size: 12px;
+}
+
+:root {
+  --font-standard-family: 'Inter', sans-serif;
+}
+
+:root {
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+}
+
+:root {
+  --font-medium-color: var(--gray-blue-color-medium);
+  --font-light-color: var(--white-color);
+  --font-dark-color: var(--gray-color-dark);
+  --font-gray-color: var(--gray-color-light);
+}
