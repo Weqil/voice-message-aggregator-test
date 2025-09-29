@@ -44,8 +44,15 @@ p {
   .mail-section {
     display: flex;
     background: var(--mails-section-background);
-    flex-direction: column;
-
+    padding: var(--padding-standard);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-radius: var(--border-radius-standard);
     gap: var(--gap-standard);
+    align-items: flex-start;
+  }
+  .mail-section-align-center {
+    align-items: flex-start;
+    justify-content: center;
   }
 }
