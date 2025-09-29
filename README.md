@@ -1,6 +1,15 @@
+
 # VoiceMessageAggregatorTest
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
+
+## Dependencies
+
+Dependencies must be installed
+
+```bash
+npm i
+```
 
 ## Development server
 
