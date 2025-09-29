@@ -9,7 +9,7 @@
     <p>{{ mail?.phoneNumber }}</p>
   </div>
   <div class="mail-section__audio mail-section-align-center">
-    <p>{{ mail?.MIME?.audioFile?.filename }}</p>
+    <app-player [audioUrl]="mail?.MIME"></app-player>
   </div>
   <div class="mail-section__action mail-section-align-center">
     <ng-content></ng-content>

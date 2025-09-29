@@ -1,0 +1,35 @@
+<!-- player.html -->
+<div class="audio-player">
+  <audio
+    #audioPlayer
+    [src]="audioSrc()"
+    (loadedmetadata)="onLoadedMetadata()"
+    (timeupdate)="onTimeUpdate()"
+    (ended)="onEnded()"
+    (error)="onError()"
+  ></audio>
+  <div class="controls">
+    <button (click)="togglePlay()" class="play-button" [disabled]="!audioSrc">
+      <img [src]="isPlaying ? 'assets/icons/pause.svg' : 'assets/icons/play.svg'" alt="play" />
+    </button>
+    <div class="progress-container-wrapper">
+      <div class="time-info">
+        {{ formatTime(currentTime) }}
+      </div>
+      <div class="progress-container">
+        <input
+          type="range"
+          class="progress-slider"
+          min="0"
+          [max]="duration"
+          [value]="currentTime"
+          (input)="onSeek($event)"
+          [disabled]="!audioSrc || duration === 0"
+        />
+      </div>
+      <div class="time-info">
+        {{ formatTime(duration) }}
+      </div>
+    </div>
+  </div>
+</div>
